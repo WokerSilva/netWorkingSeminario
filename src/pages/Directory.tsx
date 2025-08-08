@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Search, User, Phone, Copy } from 'lucide-react';
+import { Search, User } from 'lucide-react';
 import { toast } from 'react-toastify';
 import Navbar from '../components/Navbar';
 import { fetchParticipants, Participant } from '../lib/supabase';
@@ -127,6 +127,7 @@ const Directory: React.FC = () => {
                       <p className="text-gray-500 mb-3">{participant.business_type}</p>
                     
                       <div className="flex flex-col items-center space-y-2">
+                        {/*
                         <button
                           onClick={(e) => {
                             e.stopPropagation();
@@ -138,6 +139,7 @@ const Directory: React.FC = () => {
                           <span>Copiar número</span>
                           <Copy size={18} />
                         </button>
+                        */}
                       
                         <div className="flex flex-col items-center w-full text-sm">
                           <button
@@ -147,11 +149,12 @@ const Directory: React.FC = () => {
                                 handleCopyText(participant.social_media.network1, 'Social handle');
                               }
                             }}
-                            className={`min-h-[1.5em] w-full text-center bg-white text-black ${participant.social_media?.network1 ? 'hover:bg-yellow-500 hover:text-white' : 'hover:bg-white'}`}
+                            className="min-h-[1.5em] w-full text-center bg-yellow-500 text-white hover:bg-yellow-600 hover:text-white rounded-md py-2 px-4"
                             disabled={!participant.social_media?.network1}
                           >
                             {participant.social_media?.network1 || ''}
                           </button>
+                          {/*
                           <button
                             onClick={(e) => {
                               e.stopPropagation();
@@ -159,11 +162,12 @@ const Directory: React.FC = () => {
                                 handleCopyText(participant.social_media.network2, 'Social handle');
                               }
                             }}
-                            className={`min-h-[1.5em] w-full text-center bg-white text-black ${participant.social_media?.network2 ? 'hover:bg-yellow-500 hover:text-white' : 'hover:bg-white'}`}
+                            className="min-h-[1.5em] w-full text-center bg-yellow-500 text-white hover:bg-yellow-600 hover:text-white rounded-md py-2 px-4"
                             disabled={!participant.social_media?.network2}
                           >
                             {participant.social_media?.network2 || ''}
                           </button>
+                          */}
                         </div>
                       </div>
                     </div>

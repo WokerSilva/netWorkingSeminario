@@ -262,13 +262,12 @@ const RegisterForm: React.FC = () => {
         <div className="popup-content" onClick={(e) => e.stopPropagation()}>
           <h2 className="text-2xl font-bold mb-4">Confirmar Registro</h2>
           <div className="flex items-center space-x-2 mb-6 text-indigo-600 bg-indigo-100 p-4 rounded-md">
-            <span className="font-bold">¡ATENCIÓN!</span>
-            <p>Estás en el <span className="underline font-bold">Grupo B</span></p>
+            <span className="font-bold">Seminario de transformación digital</span>            
           </div>
 
           <div className="flex items-center space-x-2 mb-6 text-yellow-600 bg-yellow-100 p-4 rounded-md">
             <AlertCircle size={24} />
-            <p>Al enviar este formulario, aceptas compartir tu información con otros participantes.</p>
+            <p>Los datos de los participantes estaran en el directorio.</p>
           </div>
 
           <div className="flex justify-end space-x-4">

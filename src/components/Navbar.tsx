@@ -39,22 +39,11 @@ const Navbar: React.FC = () => {
         </button>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden md:flex items-center gap-2">
           {!isAuthenticated && (
-            <div className="flex items-center gap-2">
-              <button 
-                className="btn btn-secondary flex items-center h-10 px-4" 
-                onClick={openForm}
-              >
-                <UserPlus className="mr-2" size={18} />
-
-                Registro.
-
-              </button>
-              <Link to="/admin" className="btn btn-outline flex items-center h-10 px-4">
-                Admin
-              </Link>
-            </div>
+            <Link to="/admin" className="btn btn-outline flex items-center h-10 px-5 leading-none items-center justify-center" style={{ minWidth: '110px', display: 'flex', alignItems: 'center' }}>
+              Admin
+            </Link>
           )}
           
           {isAuthenticated && (
@@ -84,16 +73,15 @@ const Navbar: React.FC = () => {
         {isMenuOpen && (
           <div className="md:hidden absolute top-16 left-0 right-0 bg-white shadow-md z-50 p-4 flex flex-col space-y-4">
             {!isAuthenticated && (
-              <button 
-                className="btn btn-secondary flex items-center justify-center w-full" 
-                onClick={() => {
-                  openForm();
-                  setIsMenuOpen(false);
-                }}
-              >
-                <UserPlus className="mr-2" size={18} />
-                Register
-              </button>
+              <>
+                <Link 
+                  to="/admin" 
+                  className="btn btn-outline flex items-center justify-center w-full"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Admin
+                </Link>
+              </>
             )}
             
             {isAuthenticated && (
