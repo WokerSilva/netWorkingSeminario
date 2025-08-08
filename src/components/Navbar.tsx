@@ -41,9 +41,9 @@ const Navbar: React.FC = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-4">
           {!isAuthenticated && (
-            <>
+            <div className="flex items-center gap-2">
               <button 
-                className="btn btn-secondary flex items-center" 
+                className="btn btn-secondary flex items-center h-10 px-4" 
                 onClick={openForm}
               >
                 <UserPlus className="mr-2" size={18} />
@@ -51,10 +51,10 @@ const Navbar: React.FC = () => {
                 Registro.
 
               </button>
-              <Link to="/admin" className="btn btn-outline flex items-center">
+              <Link to="/admin" className="btn btn-outline flex items-center h-10 px-4">
                 Admin
               </Link>
-            </>
+            </div>
           )}
           
           {isAuthenticated && (

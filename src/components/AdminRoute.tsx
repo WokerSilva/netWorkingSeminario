@@ -151,7 +151,7 @@ const AdminRoute: React.FC<AdminRouteProps> = ({ children }) => {
                     value={formData.identification_number}
                     onChange={handleInputChange}
                     className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
-                    placeholder="4 dígitos"
+                    placeholder="password"
                   />
                 </div>
               </div>
