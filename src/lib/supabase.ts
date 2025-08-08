@@ -1,17 +1,16 @@
 import { createClient } from '@supabase/supabase-js';
-//import { supabase } from './supabaseClient';
 
 // Initialize Supabase client
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
+export const supabase = createClient(
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_ANON_KEY
+);
 
-export const isSupabaseConfigured = !!(supabaseUrl && supabaseAnonKey);
+export const isSupabaseConfigured = !!(import.meta.env.VITE_SUPABASE_URL && import.meta.env.VITE_SUPABASE_ANON_KEY);
 
 if (!isSupabaseConfigured) {
   console.warn('Supabase configuration missing. Please click "Connect to Supabase" button to set up your database.');
 }
-
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 // Type definitions for database tables
 export type Participant = {
