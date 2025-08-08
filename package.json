@@ -3,14 +3,18 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
+  "homepage": "https://WokerSilva.github.io/netWorkingSeminario",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.7",
+    "gh-pages": "^6.3.0",
     "lucide-react": "^0.344.0",
     "networking-event-app": "file:",
     "react": "^18.3.1",
