@@ -297,8 +297,9 @@ const RegisterForm: React.FC = () => {
           <h2 className="text-2xl font-bold">Formulario de Registro</h2>
           <button
             onClick={closeForm}
-            className="text-gray-500 hover:text-gray-700"
+            className="text-gray-500 hover:text-gray-700 p-1 rounded-full focus:outline-none"
             aria-label="Cerrar"
+            style={{ background: 'transparent', boxShadow: 'none', border: 'none' }}
           >
             <X size={24} />
           </button>
@@ -351,7 +352,7 @@ const RegisterForm: React.FC = () => {
                       setImagePreview(null);
                       setFormData({ ...formData, photo_url: '' });
                     }}
-                    className="absolute top-0 right-0 bg-red-500 text-white rounded-full p-1"
+                    className="absolute top-0 right-0 p-1" // Quitado bg-red-500 y text-white
                     aria-label="Eliminar foto"
                   >
                     <X size={16} />
