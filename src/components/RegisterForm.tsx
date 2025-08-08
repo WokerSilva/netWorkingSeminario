@@ -402,21 +402,22 @@ const RegisterForm: React.FC = () => {
             </label>
             {errors.strengths && <p className="text-red-500 text-sm">{errors.strengths}</p>}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-              {STRENGTHS_LIST.map(strength => (
-                <div key={strength} className="checkbox-group">
-                  <input
-                    type="checkbox"
-                    id={`strengths-${strength}`}
-                    value={strength}
-                    checked={formData.strengths.includes(strength)}
-                    onChange={(e) => handleCheckboxChange(e, 'strengths')}
-                    className="h-4 w-4 text-yellow-500 focus:ring-yellow-500 border-gray-300 rounded"
-                  />
-                  <label htmlFor={`strengths-${strength}`} className="checkbox-label">
+              {STRENGTHS_LIST.map(strength => {
+                const isChecked = formData.strengths.includes(strength);
+                return (
+                  <button
+                    type="button"
+                    key={strength}
+                    onClick={() => handleCheckboxChange({
+                      target: { value: strength, checked: !isChecked }
+                    } as any, 'strengths')}
+                    className={`w-full text-left rounded-md py-2 px-4 font-medium transition-colors border border-gray-300 focus:outline-none mb-1
+                      ${isChecked ? 'bg-yellow-500 text-white border-yellow-600' : 'bg-gray-100 text-gray-800 hover:bg-gray-200'}`}
+                  >
                     {strength}
-                  </label>
-                </div>
-              ))}
+                  </button>
+                );
+              })}
             </div>
           </div>
 
@@ -426,21 +427,22 @@ const RegisterForm: React.FC = () => {
             </label>
             {errors.needs && <p className="text-red-500 text-sm">{errors.needs}</p>}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-              {NEEDS_LIST.map(need => (
-                <div key={need} className="checkbox-group">
-                  <input
-                    type="checkbox"
-                    id={`needs-${need}`}
-                    value={need}
-                    checked={formData.needs.includes(need)}
-                    onChange={(e) => handleCheckboxChange(e, 'needs')}
-                    className="h-4 w-4 text-yellow-500 focus:ring-yellow-500 border-gray-300 rounded"
-                  />
-                  <label htmlFor={`needs-${need}`} className="checkbox-label">
+              {NEEDS_LIST.map(need => {
+                const isChecked = formData.needs.includes(need);
+                return (
+                  <button
+                    type="button"
+                    key={need}
+                    onClick={() => handleCheckboxChange({
+                      target: { value: need, checked: !isChecked }
+                    } as any, 'needs')}
+                    className={`w-full text-left rounded-md py-2 px-4 font-medium transition-colors border border-gray-300 focus:outline-none mb-1
+                      ${isChecked ? 'bg-yellow-500 text-white border-yellow-600' : 'bg-gray-100 text-gray-800 hover:bg-gray-200'}`}
+                  >
                     {need}
-                  </label>
-                </div>
-              ))}
+                  </button>
+                );
+              })}
             </div>
           </div>
 
