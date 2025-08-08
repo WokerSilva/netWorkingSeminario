@@ -441,13 +441,13 @@ const Admin: React.FC = () => {
                         Nombre
                       </th>
                       <th className="py-3 px-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Negocio
+                        Carrera
                       </th>
                       <th className="py-3 px-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Fortalezas
+                        Actividades ♥️
                       </th>
                       <th className="py-3 px-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Necesidades
+                        Actividades 🚫
                       </th>
                     </tr>
                   </thead>

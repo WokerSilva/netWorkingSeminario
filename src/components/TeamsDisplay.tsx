@@ -61,7 +61,7 @@ const TeamsDisplay: React.FC<TeamsDisplayProps> = ({
                 <div className="mt-4 pt-3 border-t border-gray-200">
                   <div className="grid grid-cols-2 gap-2 text-sm">
                     <div>
-                      <p className="font-semibold">Fortalezas:</p>
+                      <p className="font-semibold">Actividades ♥️</p>
                       <ul className="text-gray-600">
                         {Array.from(new Set(teamParticipants.flatMap(p => p.strengths || [])))
                           .slice(0, 3)
@@ -71,7 +71,7 @@ const TeamsDisplay: React.FC<TeamsDisplayProps> = ({
                       </ul>
                     </div>
                     <div>
-                      <p className="font-semibold">Necesidades:</p>
+                      <p className="font-semibold">Actividades 🚫</p>
                       <ul className="text-gray-600">
                         {Array.from(new Set(teamParticipants.flatMap(p => p.needs || [])))
                           .slice(0, 3)
