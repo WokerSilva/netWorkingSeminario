@@ -1,0 +1,19 @@
+// Render participant in match
+const renderParticipantInMatch = (participant: any) => (
+  <div className="flex flex-col space-y-2">
+    <div className="flex items-center space-x-2">
+      {participant.photo_url ? (
+        <img
+          src={participant.photo_url}
+          alt={`${participant.name} ${participant.surname}`}
+          className="w-10 h-10 rounded-full object-cover"
+        />
+      ) : (
+        <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
+          <User size={18} className="text-gray-500" />
+        </div>
+      )}
+      <span>{participant.name} {participant.surname}</span>
+    </div>
+  </div>
+);
